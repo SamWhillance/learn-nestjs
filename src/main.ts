@@ -24,7 +24,17 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
 
   // Setup the swagger route to serve the swagger document
-  SwaggerModule.setup("swagger", app, document);
+  SwaggerModule.setup("api-docs", app, document, {
+    customSiteTitle: "Cats & Dogs API Documentation",
+    customfavIcon: "/favicon.ico",
+    customJs: [
+      "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-bundle.min.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-standalone-preset.min.js",
+    ],
+    customCssUrl: [
+      "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css",
+    ],
+  });
 
   // Start the server
   await app.listen(process.env.PORT ?? 3000);
