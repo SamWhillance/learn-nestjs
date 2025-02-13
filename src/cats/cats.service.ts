@@ -1,14 +1,18 @@
+import { CreateCatDto } from "./cats.controller";
 import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class CatsService {
-  private readonly cats = ["Tom", "Jerry"];
+  private readonly cats: CreateCatDto[] = [
+    { name: "Tom", age: 3 },
+    { name: "Jerry", age: 2 },
+  ];
 
-  findAll(): string[] {
+  getAll(): CreateCatDto[] {
     return this.cats;
   }
 
-  create(cat: string) {
+  create(cat: CreateCatDto) {
     this.cats.push(cat);
   }
 }
