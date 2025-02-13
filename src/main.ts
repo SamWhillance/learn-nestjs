@@ -6,6 +6,9 @@ import { NestFactory } from "@nestjs/core";
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // Enable CORS
+  app.enableCors();
+
   const config = new DocumentBuilder()
     .setTitle("Cats & Dogs API")
     .setDescription("Sam Whillance's cats & dogs API")
