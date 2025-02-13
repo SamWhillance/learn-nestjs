@@ -8,6 +8,9 @@ async function bootstrap() {
 
   // Enable CORS
   app.enableCors();
+  app.setGlobalPrefix("api", {
+    exclude: ["swagger"],
+  });
 
   const config = new DocumentBuilder()
     .setTitle("Cats & Dogs API")
