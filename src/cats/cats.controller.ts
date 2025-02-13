@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from "@nestjs/common";
+import { Body, Controller, Get, Post } from "@nestjs/common";
 
 import { CatsService } from "./cats.service";
 
@@ -11,9 +11,9 @@ export class CatsController {
     return this.catsService.findAll();
   }
 
-  @Post()
-  create(@Body() cat: string) {
-    this.catsService.create(cat);
+  @Get("add")
+  create() {
+    this.catsService.create("Sam");
     return { message: "Cat created successfully" };
   }
 }
