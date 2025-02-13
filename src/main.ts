@@ -24,7 +24,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
 
   // Setup the swagger route to serve the swagger document
-  SwaggerModule.setup("api-docs", app, document, {
+  SwaggerModule.setup("", app, document, {
     customSiteTitle: "Cats & Dogs API Documentation",
     customfavIcon: "/favicon.ico",
     customJs: [
